@@ -1,0 +1,1693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>Agripulse Private Limited | iRoot Smart Irrigation Ecosystem</title>
+  <meta name="description" content="Agripulse iRoot is a complete smart irrigation ecosystem connecting farms, devices, and data to automate irrigation, optimize water usage, and protect motors with intelligent IoT technology.">
+  <meta name="keywords" content="smart irrigation, agricultural IoT, iRoot, iPump, iValve, iSense, iNet, precision agriculture, water conservation, farm automation, Agripulse">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/iroot-logo.png">
+  <!-- No browser caching during development -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <!-- Google Fonts: Space Grotesk, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Background Tech Grid & Ambient Glow -->
+  <div class="bg-tech-overlay" aria-hidden="true"></div>
+  <div class="ambient-glow-orb orb-1" aria-hidden="true"></div>
+  <div class="ambient-glow-orb orb-2" aria-hidden="true"></div>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-brand">
+        <div class="preloader-logo-ring"></div>
+        <div class="preloader-title">AGRIPULSE <span>iRoot</span></div>
+      </div>
+      <div class="preloader-progress-bar">
+        <div class="preloader-progress-fill" id="preloaderProgress"></div>
+      </div>
+      <div class="preloader-log" id="preloaderLog">Initializing Field LoRa Mesh...</div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-wrapper-premium">
+
+      <!-- Left: Hamburger Menu -->
+      <button class="nav-hamburger" id="menuToggleBtn" aria-label="Open Navigation Menu">
+        <div class="ham-icon">
+          <span class="ham-bar"></span>
+          <span class="ham-bar"></span>
+          <span class="ham-bar"></span>
+        </div>
+        <span class="ham-label">Menu</span>
+      </button>
+
+      <!-- Center: iRoot Logo Only -->
+      <a href="#home" class="nav-brand-center" id="navBrand">
+        <img src="assets/images/iroot-logo.png" alt="Agripulse iRoot Logo" class="brand-logo-img-center">
+      </a>
+
+      <!-- Right: Empty spacer to balance the hamburger -->
+      <div class="nav-right-spacer"></div>
+
+    </div>
+  </nav>
+
+  <!-- Full-Screen Menu Drawer (slides in from left) -->
+  <div class="site-drawer" id="siteDrawer">
+
+    <!-- Drawer Header -->
+    <div class="drawer-header">
+      <div class="drawer-brand">
+        <span class="drawer-brand-iroot">iRoot</span>
+        <span class="drawer-brand-tag">Agripulse Private Limited</span>
+      </div>
+      <button class="drawer-close" id="drawerClose" aria-label="Close Menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+
+    <!-- Drawer Navigation Links -->
+    <nav class="drawer-nav">
+      <a href="#home"         class="drawer-link" data-num="01">Home</a>
+      <a href="#how-it-works" class="drawer-link" data-num="02">How It Works</a>
+      <a href="#products"     class="drawer-link" data-num="03">Products</a>
+      <a href="#sandbox"      class="drawer-link" data-num="04">Command Center</a>
+      <a href="#calculator"   class="drawer-link" data-num="05">ROI Calculator</a>
+      <a href="#benefits"     class="drawer-link" data-num="06">Benefits</a>
+      <a href="#about"        class="drawer-link" data-num="07">About</a>
+      <a href="#contact"      class="drawer-link" data-num="08">Contact</a>
+    </nav>
+
+    <!-- Drawer Footer -->
+    <div class="drawer-footer">
+      <a href="#contact" class="btn btn-primary" id="drawerDemoBtn">Request a Demo</a>
+      <div class="drawer-contact-info">
+        <span>+91 96191 71636</span>
+        <span>info@agripulse.in</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Drawer Backdrop -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+  <!-- ==========================================================================
+       CINEMATIC HERO SLIDER
+       ========================================================================== -->
+  <header class="cinematic-hero" id="home">
+
+    <!-- Slides -->
+    <div class="hero-slider" id="heroSlider">
+
+      <!-- Slide 1: Precision Irrigation Sunrise -->
+      <div class="hero-slide active" data-slide="0">
+        <div class="slide-bg">
+          <img src="assets/images/banner-slide1-irrigation.jpg?v=2" alt="Precision Irrigation at Sunrise">
+          <div class="slide-overlay"></div>
+        </div>
+        <div class="slide-content container">
+          <div class="slide-eyebrow">
+            <span class="pulse-dot"></span>
+            <span>Agripulse Private Limited</span>
+          </div>
+          <h1 class="slide-headline">
+            Every Drop.<br><em>Intelligently<br>Managed.</em>
+          </h1>
+          <p class="slide-sub">
+            Precision irrigation powered by intelligent IoT technology — automating every drop your farm needs.
+          </p>
+          <div class="slide-actions">
+            <a href="#products" class="btn btn-primary btn-lg">Discover iRoot</a>
+            <a href="#contact" class="btn btn-ghost btn-lg">Request a Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2: One Ecosystem Complete Control -->
+      <div class="hero-slide" data-slide="1">
+        <div class="slide-bg">
+          <img src="assets/images/banner-slide2-ecosystem.jpg?v=2" alt="iRoot App Ecosystem Control">
+          <div class="slide-overlay"></div>
+        </div>
+        <div class="slide-content container">
+          <div class="slide-eyebrow">
+            <span class="pulse-dot"></span>
+            <span>Complete Farm Control</span>
+          </div>
+          <h1 class="slide-headline">
+            One Ecosystem.<br><em>Complete<br>Control.</em>
+          </h1>
+          <p class="slide-sub">
+            Sense. Connect. Automate. Monitor — all from the iRoot app, anywhere in the world.
+          </p>
+          <div class="slide-actions">
+            <a href="#products" class="btn btn-primary btn-lg">Explore Ecosystem</a>
+            <a href="#how-it-works" class="btn btn-ghost btn-lg">How It Works</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3: Connect Every Part -->
+      <div class="hero-slide" data-slide="2">
+        <div class="slide-bg">
+          <img src="assets/images/banner-slide3-connect.jpg?v=2" alt="Smart Farm Connected">
+          <div class="slide-overlay"></div>
+        </div>
+        <div class="slide-content container">
+          <div class="slide-eyebrow">
+            <span class="pulse-dot"></span>
+            <span>Intelligent Farm Network</span>
+          </div>
+          <h1 class="slide-headline">
+            Connect Every<br>Part of<br><em>Your Farm.</em>
+          </h1>
+          <p class="slide-sub">
+            Monitor devices, field conditions and irrigation from one intelligent ecosystem — built for Indian agriculture.
+          </p>
+          <div class="slide-actions">
+            <a href="#how-it-works" class="btn btn-primary btn-lg">How It Works</a>
+            <a href="#benefits" class="btn btn-ghost btn-lg">Why Agripulse</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4: Smart IoT Farm -->
+      <div class="hero-slide" data-slide="3">
+        <div class="slide-bg">
+          <img src="assets/images/hero-farm-iot.jpg?v=2" alt="Smart IoT Farm">
+          <div class="slide-overlay"></div>
+        </div>
+        <div class="slide-content container">
+          <div class="slide-eyebrow">
+            <span class="pulse-dot"></span>
+            <span>Precision Soil Intelligence</span>
+          </div>
+          <h1 class="slide-headline">
+            Sense Every Drop.<br><em>Save Every<br>Litre.</em>
+          </h1>
+          <p class="slide-sub">
+            iSense monitors soil moisture at up to 4 root depths — triggering precision irrigation only when your crops truly need it.
+          </p>
+          <div class="slide-actions">
+            <a href="#products" class="btn btn-primary btn-lg">Explore iSense</a>
+            <a href="#calculator" class="btn btn-ghost btn-lg">Calculate Savings</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.hero-slider -->
+
+    <!-- Slide Navigation Dots -->
+    <div class="hero-dots" id="heroDots">
+      <button class="hero-dot active" data-goto="0" aria-label="Slide 1"></button>
+      <button class="hero-dot" data-goto="1" aria-label="Slide 2"></button>
+      <button class="hero-dot" data-goto="2" aria-label="Slide 3"></button>
+      <button class="hero-dot" data-goto="3" aria-label="Slide 4"></button>
+    </div>
+
+    <!-- Slide Prev / Next Arrows -->
+    <button class="hero-arrow hero-arrow--prev" id="heroPrev" aria-label="Previous Slide">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </button>
+    <button class="hero-arrow hero-arrow--next" id="heroNext" aria-label="Next Slide">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </button>
+
+    <!-- Slide Counter -->
+    <div class="hero-counter">
+      <span id="heroCurrentSlide">01</span>
+      <span class="hero-counter-sep"></span>
+      <span class="hero-counter-total">04</span>
+    </div>
+
+    <!-- Scroll Hint -->
+    <div class="hero-scroll-hint">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Scroll to Explore</span>
+    </div>  </header>
+
+
+  <!-- ==========================================================================
+       HOW IT WORKS (THE 6-STEP STORY)
+       ========================================================================== -->
+  <section class="section-spacing story-section" id="how-it-works">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-badge">Autonomous Ecosystem</div>
+        <h2 class="section-title">
+          THE AGRIPULSE STORY: <span class="gradient-text">HOW IT WORKS</span>
+        </h2>
+        <p class="section-desc">
+          A closed-loop autonomous system engineered to eliminate guesswork, prevent equipment failure, and deliver precision moisture exactly when crops demand it.
+        </p>
+      </div>
+
+      <!-- 6-Step Timeline Cards -->
+      <div class="story-steps-track" id="storyStepsTrack">
+        <div class="story-step-card active" data-step="1">
+          <div class="story-step-num">
+            <span>STEP 01</span>
+            <div class="step-icon">🌱</div>
+          </div>
+          <h3 class="story-step-title">Farm</h3>
+          <p class="story-step-desc">Field topography, crop zoning, existing starter integration and piping layout configured.</p>
+        </div>
+
+        <div class="story-step-card" data-step="2">
+          <div class="story-step-num">
+            <span>STEP 02</span>
+            <div class="step-icon">📡</div>
+          </div>
+          <h3 class="story-step-title">Sense</h3>
+          <p class="story-step-desc">iSense multi-point soil probes monitor moisture, tension, and root-zone water depth in real time.</p>
+        </div>
+
+        <div class="story-step-card" data-step="3">
+          <div class="story-step-num">
+            <span>STEP 03</span>
+            <div class="step-icon">⚡</div>
+          </div>
+          <h3 class="story-step-title">Connect</h3>
+          <p class="story-step-desc">iNet IoT Gateway transmits telemetry up to 3km via LoRa to secure 4G cloud infrastructure.</p>
+        </div>
+
+        <div class="story-step-card" data-step="4">
+          <div class="story-step-num">
+            <span>STEP 04</span>
+            <div class="step-icon">⚙️</div>
+          </div>
+          <h3 class="story-step-title">Automate</h3>
+          <p class="story-step-desc">iPump activates 3-phase pump while iValve switches up to 10 latching solenoid drip zones autonomously.</p>
+        </div>
+
+        <div class="story-step-card" data-step="5">
+          <div class="story-step-num">
+            <span>STEP 05</span>
+            <div class="step-icon">📱</div>
+          </div>
+          <h3 class="story-step-title">Monitor</h3>
+          <p class="story-step-desc">iRoot Mobile App delivers live pump controls, runtime records, weather alerts, and crop telemetry.</p>
+        </div>
+
+        <div class="story-step-card" data-step="6">
+          <div class="story-step-num">
+            <span>STEP 06</span>
+            <div class="step-icon">💧</div>
+          </div>
+          <h3 class="story-step-title">Smarter Irrigation</h3>
+          <p class="story-step-desc">Up to 40% water conservation, zero motor burnouts, optimized crop yields, and sustainable farming.</p>
+        </div>
+      </div>
+
+      <!-- Interactive Architecture Schematic -->
+      <div class="architecture-diagram-container">
+        <div class="diagram-top-bar">
+          <div class="diagram-title">
+            <span class="pulse-dot"></span>
+            <span>LIVE INTERACTIVE SYSTEM TOPOLOGY (CLICK ANY NODE TO INSPECT TELEMETRY)</span>
+          </div>
+          <div class="diagram-controls">
+            <button class="btn btn-secondary btn-sm" id="triggerMeshPacketBtn">
+              <span>Send Test Telemetry Packet</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="arch-schematic-grid" id="archSchematicGrid">
+          <div class="arch-node highlighted" data-node="isense" id="nodeIsense">
+            <div class="arch-node-icon">🌱</div>
+            <div class="arch-node-name">iSense Soil Probe</div>
+            <div class="arch-node-role">4-Point Moisture Telemetry</div>
+            <div class="mono-tag text-emerald" style="margin-top: 8px;">Solar Powered • 3.7V</div>
+          </div>
+
+          <div class="arch-node" data-node="inet" id="nodeInet">
+            <div class="arch-node-icon">📡</div>
+            <div class="arch-node-name">iNet Gateway</div>
+            <div class="arch-node-role">3km LoRa + 4G SIM</div>
+            <div class="mono-tag text-cyan" style="margin-top: 8px;">GPS Locked • 12V Solar</div>
+          </div>
+
+          <div class="arch-node" data-node="cloud" id="nodeCloud">
+            <div class="arch-node-icon">☁️</div>
+            <div class="arch-node-name">iRoot Cloud</div>
+            <div class="arch-node-role">Autonomous Decision Engine</div>
+            <div class="mono-tag text-emerald" style="margin-top: 8px;">Real-Time Rule Engine</div>
+          </div>
+
+          <div class="arch-node" data-node="ipump" id="nodeIpump">
+            <div class="arch-node-icon">⚙️</div>
+            <div class="arch-node-name">iPump Controller</div>
+            <div class="arch-node-role">3-Phase Motor Protection</div>
+            <div class="mono-tag text-emerald" style="margin-top: 8px;">Dry Run Guard • RYB</div>
+          </div>
+
+          <div class="arch-node" data-node="ivalve" id="nodeIvalve">
+            <div class="arch-node-icon">🚰</div>
+            <div class="arch-node-name">iValve Actuator</div>
+            <div class="arch-node-role">10-Zone Solenoid Control</div>
+            <div class="mono-tag text-cyan" style="margin-top: 8px;">90-Day Solar Backup</div>
+          </div>
+        </div>
+
+        <!-- Live Packet Stream HUD -->
+        <div class="live-packet-stream">
+          <span style="color: var(--text-secondary); margin-right: 12px;">ACTIVE PAYLOAD:</span>
+          <div class="packet-data" id="packetDataInspector">
+            { "event": "MOISTURE_PROBE_POLL", "sensor_id": "ISENSE-P04", "zone": 3, "moisture_pct": 68.4, "battery_v": 3.7, "lora_rssi": "-82dBm", "cloud_decision": "MAINTAIN_ZONE_STATUS" }
+          </div>
+          <span class="mono-tag text-emerald">TLS 1.3 SECURE</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PRODUCTS SECTION (THE iROOT SUITE)
+       ========================================================================== -->
+  <section class="section-spacing products-section" id="products">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-badge">Hardware & Software Ecosystem</div>
+        <h2 class="section-title">
+          THE <span class="gradient-text">iRoot PRODUCT SUITE</span>
+        </h2>
+        <p class="section-desc">
+          Precision-engineered IoT hardware and intuitive mobile intelligence designed to withstand extreme agricultural environments and automate every phase of irrigation.
+        </p>
+      </div>
+
+      <!-- Industrial Hardware Hero Lineup Banner -->
+      <div class="ecosystem-hero-card">
+        <img src="assets/images/product-lineup-industrial.png" alt="Agripulse iRoot Hardware Ecosystem Lineup" class="ecosystem-hero-img">
+        <div class="ecosystem-hero-overlay">
+          <div class="hero-badge" style="width: fit-content; margin-bottom: 12px;">
+            <span class="pulse-dot"></span> Complete Unified Solution
+          </div>
+          <h3 class="ecosystem-hero-title">ENGINEERED FOR AGRICULTURAL RESILIENCE</h3>
+          <p class="ecosystem-hero-desc">
+            From deep root probes to high-voltage pump starters, the entire iRoot family shares a common design language: ultra-rugged IP-rated enclosures, solar autonomy, and long-range wireless connectivity.
+          </p>
+        </div>
+      </div>
+
+      <!-- Product Navigation Tabs -->
+      <div class="product-tabs-bar" id="productTabsBar" role="tablist">
+        <button class="product-tab-btn active" data-target="tab-app" role="tab" aria-selected="true">
+          <span>📱 iRoot Mobile App</span>
+        </button>
+        <button class="product-tab-btn" data-target="tab-pump" role="tab" aria-selected="false">
+          <span>⚙️ iPump Controller</span>
+        </button>
+        <button class="product-tab-btn" data-target="tab-valve" role="tab" aria-selected="false">
+          <span>🚰 iValve Controller</span>
+        </button>
+        <button class="product-tab-btn" data-target="tab-sense" role="tab" aria-selected="false">
+          <span>🌱 iSense Soil Probe</span>
+        </button>
+        <button class="product-tab-btn" data-target="tab-net" role="tab" aria-selected="false">
+          <span>📡 iNet IoT Gateway</span>
+        </button>
+        <button class="product-tab-btn" data-target="tab-acc" role="tab" aria-selected="false">
+          <span>🔩 Valves & Accessories</span>
+        </button>
+      </div>
+
+      <!-- TAB 1: iRoot Mobile App -->
+      <div class="product-panel active" id="tab-app" role="tabpanel">
+        <div class="product-detail-grid">
+          <div class="product-info-col">
+            <div class="product-intro-header">
+              <div class="product-kicker">Mobile Application</div>
+              <h3 class="product-main-title">Complete Farm Management at Your Fingertips</h3>
+              <p class="product-lead-text">
+                Remotely monitor and automate irrigation with iRoot. Control pumps, valves, and sensors while gaining real-time farm insights for smarter decisions, greater efficiency, and lasting success.
+              </p>
+            </div>
+
+            <div class="features-bullet-grid">
+              <div class="feature-bullet-item">
+                <h4 class="feature-bullet-title">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                  Remote Monitoring
+                </h4>
+                <p class="feature-bullet-desc">Monitor pumps, valves, and sensors from anywhere in the world.</p>
+              </div>
+
+              <div class="feature-bullet-item">
+                <h4 class="feature-bullet-title">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                  Smart Irrigation
+                </h4>
+                <p class="feature-bullet-desc">Create automated irrigation schedules with ease and precision timing.</p>
+              </div>
+
+              <div class="feature-bullet-item">
+                <h4 class="feature-bullet-title">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>
+                  Weather Intelligence
+                </h4>
+                <p class="feature-bullet-desc">Access live rainfall, temperature, humidity, and wind updates.</p>
+              </div>
+
+              <div class="feature-bullet-item">
+                <h4 class="feature-bullet-title">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                  Market Reports
+                </h4>
+                <p class="feature-bullet-desc">View live agricultural market prices and crop pricing trends.</p>
+              </div>
+
+              <div class="feature-bullet-item">
+                <h4 class="feature-bullet-title">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                  Crop Management
+                </h4>
+                <p class="feature-bullet-desc">Manage crop information, planting stages, and field acreage.</p>
+              </div>
+
+              <div class="feature-bullet-item">
+                <h4 class="feature-bullet-title">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><activity></activity><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                  Pump Analytics
+                </h4>
+                <p class="feature-bullet-desc">Track runtime history, water throughput, and equipment performance.</p>
+              </div>
+
+              <div class="feature-bullet-item">
+                <h4 class="feature-bullet-title">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                  Secure Collaboration
+                </h4>
+                <p class="feature-bullet-desc">Share farm access securely with staff using QR-based permissions.</p>
+              </div>
+
+              <div class="feature-bullet-item">
+                <h4 class="feature-bullet-title">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                  Multi-Farm Management
+                </h4>
+                <p class="feature-bullet-desc">Manage multiple farms and dispersed land parcels from a single account.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Smartphone Simulator -->
+          <div class="interactive-simulator-card">
+            <div class="sim-header">
+              <span class="sim-badge">LIVE APP INTERACTIVE PREVIEW</span>
+              <span class="mono-tag text-emerald">v2.4.1 Connected</span>
+            </div>
+
+            <div class="phone-mockup-frame">
+              <div class="phone-notch"></div>
+              <div class="phone-screen-content">
+                <img src="assets/images/app-screen-pump.png" alt="iRoot App Pump Control Screen" class="phone-screen-img" id="phoneMockupDisplay">
+              </div>
+            </div>
+
+            <div class="phone-tab-selectors" id="phoneTabSelectors">
+              <button class="phone-view-btn active" data-screen="assets/images/app-screen-pump.png">Pump Control</button>
+              <button class="phone-view-btn" data-screen="assets/images/app-screen-moisture.png">Moisture Senses</button>
+              <button class="phone-view-btn" data-screen="assets/images/app-screen-schedule.png">Scheduler</button>
+              <button class="phone-view-btn" data-screen="assets/images/app-screen-analytics.png">Analytics</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: iPump Controller -->
+      <div class="product-panel" id="tab-pump" role="tabpanel">
+        <div class="product-detail-grid">
+          <div class="product-info-col">
+            <div class="product-intro-header">
+              <div class="product-kicker">Pump Automation & Power Management</div>
+              <h3 class="product-main-title">iPump Controller</h3>
+              <p class="product-lead-text">
+                iPump is a smart pump controller designed for automated irrigation, delivering reliable control, complete motor protection, and real-time power monitoring. Empower your farm with smarter pump management.
+              </p>
+            </div>
+
+            <div class="features-bullet-grid">
+              <div class="feature-bullet-item">
+                <h4 class="feature-bullet-title">Smart Pump Control</h4>
+                <p class="feature-bullet-desc">Remotely start and stop irrigation pumps using mobile applications or scheduled programs.</p>
+              </div>
+              <div class="feature-bullet-item">
+                <h4 class="feature-bullet-title">Auto Pump Restart</h4>
+                <p class="feature-bullet-desc">Automatically restores pump operation safely after power recovery from grid cuts.</p>
+              </div>
+              <div class="feature-bullet-item">
+                <h4 class="feature-bullet-title">Three-Phase Monitoring</h4>
+                <p class="feature-bullet-desc">Continuously monitors all three supply phases (R, Y, B) in real time.</p>
+              </div>
+              <div class="feature-bullet-item">
+                <h4 class="feature-bullet-title">Current Monitoring</h4>
+                <p class="feature-bullet-desc">Protects the motor from overcurrent, overloading, and abnormal operating conditions.</p>
+              </div>
+              <div class="feature-bullet-item">
+                <h4 class="feature-bullet-title">Protection Bypass</h4>
+                <p class="feature-bullet-desc">Configurable bypass mode for maintenance and special field operating conditions.</p>
+              </div>
+              <div class="feature-bullet-item">
+                <h4 class="feature-bullet-title">Water Consumption Tracking</h4>
+                <p class="feature-bullet-desc">Track irrigation water usage and runtime logs remotely through iRoot application.</p>
+              </div>
+              <div class="feature-bullet-item">
+                <h4 class="feature-bullet-title">Easy Starter Integration</h4>
+                <p class="feature-bullet-desc">Compatible with a wide range of existing motor starters (DOL, Star-Delta, Electronic).</p>
+              </div>
+              <div class="feature-bullet-item">
+                <h4 class="feature-bullet-title">Local Manual Control</h4>
+                <p class="feature-bullet-desc">Operate the pump physically using ON, OFF, and ACK buttons on the enclosure.</p>
+              </div>
+            </div>
+
+            <!-- Technical Specifications Table -->
+            <div class="specs-table-box">
+              <div class="specs-table-title">
+                <span>iPump TECHNICAL SPECIFICATIONS</span>
+                <span>PDF SOURCE OF TRUTH</span>
+              </div>
+              <table class="specs-table">
+                <tbody>
+                  <tr>
+                    <td class="spec-param">Internal Battery</td>
+                    <td class="spec-val">3.7V Integrated Rechargeable</td>
+                  </tr>
+                  <tr>
+                    <td class="spec-param">Backup Time</td>
+                    <td class="spec-val">Up to 4 Hours Backup / Up to 3 Days Standby</td>
+                  </tr>
+                  <tr>
+                    <td class="spec-param">Smart Scheduling</td>
+                    <td class="spec-val">Automate Irrigation With Smart, Flexible Scheduling</td>
+                  </tr>
+                  <tr>
+                    <td class="spec-param">Application</td>
+                    <td class="spec-val">Pump Controller & Motor Protection</td>
+                  </tr>
+                  <tr>
+                    <td class="spec-param">Protection Safeguards</td>
+                    <td class="spec-val">Overload, Phase Failure, Dry Run, Low/High Voltage, Power Cut Intimation</td>
+                  </tr>
+                  <tr>
+                    <td class="spec-param">Status Indicators</td>
+                    <td class="spec-val">Dedicated LEDs: Power, Communication, Pump, Fault Status</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Interactive Hardware Simulator: iPump Console -->
+          <div class="interactive-simulator-card">
+            <div class="sim-header">
+              <span class="sim-badge">INTERACTIVE HARDWARE CONTROLLER</span>
+              <span class="mono-tag text-emerald">RYB Phase Sensor Active</span>
+            </div>
+
+            <div class="ipump-console" id="ipumpConsole">
+              <div class="ipump-top-display">
+                <div class="ipump-screen-header">
+                  <span>AGRIPULSE iPump v1.0</span>
+                  <span id="ipumpStatusText" class="text-emerald">STANDBY • READY</span>
+                </div>
+                <div class="ipump-live-metrics">
+                  <div class="ipump-metric-box">
+                    <div class="ipump-metric-label">VOLTAGE</div>
+                    <div class="ipump-metric-val" id="ipumpVoltageVal">415 V</div>
+                  </div>
+                  <div class="ipump-metric-box">
+                    <div class="ipump-metric-label">CURRENT</div>
+                    <div class="ipump-metric-val" id="ipumpCurrentVal">14.2 A</div>
+                  </div>
+                  <div class="ipump-metric-box">
+                    <div class="ipump-metric-label">PRESSURE</div>
+                    <div class="ipump-metric-val" id="ipumpPressureVal">3.4 BAR</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- LEDs Cluster (Power, Comms, Pump, Fault) -->
+              <div class="ipump-led-cluster">
+                <div class="ipump-led-item">
+                  <div class="led-bulb green-lit" id="ledPower"></div>
+                  <div class="led-label">POWER</div>
+                </div>
+                <div class="ipump-led-item">
+                  <div class="led-bulb green-lit" id="ledComms"></div>
+                  <div class="led-label">COMMS</div>
+                </div>
+                <div class="ipump-led-item">
+                  <div class="led-bulb" id="ledPump"></div>
+                  <div class="led-label">PUMP</div>
+                </div>
+                <div class="ipump-led-item">
+                  <div class="led-bulb" id="ledFault"></div>
+                  <div class="led-label">FAULT</div>
+                </div>
+              </div>
+
+              <!-- Physical Controller Buttons -->
+              <div class="ipump-buttons-row">
+                <button class="btn-hardware btn-hw-on" id="ipumpBtnOn" title="Start Motor Pump">
+                  START (ON)
+                </button>
+                <button class="btn-hardware btn-hw-off" id="ipumpBtnOff" title="Stop Motor Pump">
+                  STOP (OFF)
+                </button>
+                <button class="btn-hardware btn-hw-ack" id="ipumpBtnAck" title="Acknowledge Fault / Alarm">
+                  ACK / RESET
+                </button>
+              </div>
+
+              <!-- Fault Condition Testing Matrix -->
+              <div class="sim-fault-triggers">
+                <div class="sim-fault-header">Test Fault Protection Safeguards (PDF Spec):</div>
+                <div class="fault-btn-group">
+                  <button class="fault-trigger-btn" data-fault="dryrun">Simulate Dry Run</button>
+                  <button class="fault-trigger-btn" data-fault="phasefail">Phase Failure (R-Y-B)</button>
+                  <button class="fault-trigger-btn" data-fault="overload">Overload Current</button>
+                  <button class="fault-trigger-btn" data-fault="voltage">Low Voltage Trip</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: iValve Controller -->
+      <div class="product-panel" id="tab-valve" role="tabpanel">
+        <div class="product-detail-grid">
+          <div class="product-info-col">
+            <div class="product-intro-header">
+              <div class="product-kicker">Smart Valve Controller</div>
+              <h3 class="product-main-title">iValve Controller</h3>
+              <p class="product-lead-text">
+                iValve enables smarter irrigation for greater farming success with remote control, real-time monitoring, and reliable connectivity. Control up to 10 latching solenoid valves from a single unit with solar autonomy.
+              </p>
+            </div>
+
+            <div class="features-bullet-grid">
+              <div class="feature-bullet-item">
+                <h4 class="feature-bullet-title">Multi-Valve Control</h4>
+                <p class="feature-bullet-desc">Control up to 10 Latching solenoid valves from one single controller.</p>
+              </div>
+              <div class="feature-bullet-item">
+                <h4 class="feature-bullet-title">Remote Monitoring</h4>
+                <p class="feature-bullet-desc">Monitor and control irrigation valves through the cloud from anywhere.</p>
+              </div>
+              <div class="feature-bullet-item">
+                <h4 class="feature-bullet-title">Real-Time Alerts</h4>
+                <p class="feature-bullet-desc">Instant notifications for line faults, pressure drops, and operational events.</p>
+              </div>
+              <div class="feature-bullet-item">
+                <h4 class="feature-bullet-title">Rugged Outdoor Design</h4>
+                <p class="feature-bullet-desc">IP65 weather-resistant enclosure engineered for harsh agricultural environments.</p>
+              </div>
+              <div class="feature-bullet-item">
+                <h4 class="feature-bullet-title">Solar Powered</h4>
+                <p class="feature-bullet-desc">Integrated solar charging with rechargeable battery for 24x7 continuous operation.</p>
+              </div>
+              <div class="feature-bullet-item">
+                <h4 class="feature-bullet-title">Smart Scheduling</h4>
+                <p class="feature-bullet-desc">Automate zone-by-zone irrigation with flexible, crop-calibrated scheduling.</p>
+              </div>
+            </div>
+
+            <!-- Technical Specifications Table -->
+            <div class="specs-table-box">
+              <div class="specs-table-title">
+                <span>iValve TECHNICAL SPECIFICATIONS</span>
+                <span>PDF SOURCE OF TRUTH</span>
+              </div>
+              <table class="specs-table">
+                <tbody>
+                  <tr>
+                    <td class="spec-param">Solar Panel</td>
+                    <td class="spec-val">Solar Powered Integrated</td>
+                  </tr>
+                  <tr>
+                    <td class="spec-param">Internal Battery</td>
+                    <td class="spec-val">3.7 V Rechargeable</td>
+                  </tr>
+                  <tr>
+                    <td class="spec-param">Battery Power Backup</td>
+                    <td class="spec-val">90 Days Autonomous Backup</td>
+                  </tr>
+                  <tr>
+                    <td class="spec-param">Valve Capacity</td>
+                    <td class="spec-val">2 / 4 / 10 Valve Options</td>
+                  </tr>
+                  <tr>
+                    <td class="spec-param">Digital Inputs</td>
+                    <td class="spec-val">3 Digital Water Meter Inputs</td>
+                  </tr>
+                  <tr>
+                    <td class="spec-param">Operating Temperature</td>
+                    <td class="spec-val">-20°C to +60°C</td>
+                  </tr>
+                  <tr>
+                    <td class="spec-param">Enclosure Rating</td>
+                    <td class="spec-val">IP65 Weather Resistant</td>
+                  </tr>
+                  <tr>
+                    <td class="spec-param">Application</td>
+                    <td class="spec-val">Smart Irrigation System</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Interactive Simulator: iValve Zone Switcher -->
+          <div class="interactive-simulator-card">
+            <div class="sim-header">
+              <span class="sim-badge">10-ZONE LATCHING SOLENOID MATRIX</span>
+              <span class="mono-tag text-emerald">Solar: 90-Day Reserve</span>
+            </div>
+
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 18px;">
+              Click any solenoid zone below to toggle water delivery line. Digital meter registers pulses in real time:
+            </p>
+
+            <div class="ivalve-zones-grid" id="valveZonesGrid">
+              <!-- 10 Solenoid Zones -->
+              <div class="valve-zone-box open" data-zone="1">
+                <div class="valve-zone-title">ZONE 01</div>
+                <div class="valve-zone-status">OPEN • 18 LPM</div>
+              </div>
+              <div class="valve-zone-box open" data-zone="2">
+                <div class="valve-zone-title">ZONE 02</div>
+                <div class="valve-zone-status">OPEN • 18 LPM</div>
+              </div>
+              <div class="valve-zone-box" data-zone="3">
+                <div class="valve-zone-title">ZONE 03</div>
+                <div class="valve-zone-status">CLOSED</div>
+              </div>
+              <div class="valve-zone-box" data-zone="4">
+                <div class="valve-zone-title">ZONE 04</div>
+                <div class="valve-zone-status">CLOSED</div>
+              </div>
+              <div class="valve-zone-box" data-zone="5">
+                <div class="valve-zone-title">ZONE 05</div>
+                <div class="valve-zone-status">CLOSED</div>
+              </div>
+              <div class="valve-zone-box" data-zone="6">
+                <div class="valve-zone-title">ZONE 06</div>
+                <div class="valve-zone-status">CLOSED</div>
+              </div>
+              <div class="valve-zone-box" data-zone="7">
+                <div class="valve-zone-title">ZONE 07</div>
+                <div class="valve-zone-status">CLOSED</div>
+              </div>
+              <div class="valve-zone-box" data-zone="8">
+                <div class="valve-zone-title">ZONE 08</div>
+                <div class="valve-zone-status">CLOSED</div>
+              </div>
+              <div class="valve-zone-box" data-zone="9">
+                <div class="valve-zone-title">ZONE 09</div>
+                <div class="valve-zone-status">CLOSED</div>
+              </div>
+              <div class="valve-zone-box" data-zone="10">
+                <div class="valve-zone-title">ZONE 10</div>
+                <div class="valve-zone-status">CLOSED</div>
+              </div>
+            </div>
+
+            <div class="telemetry-meta" style="background: rgba(0,0,0,0.4); padding: 14px; border-radius: 8px;">
+              <span>Total Active Flow: <strong id="totalFlowDisplay" class="text-emerald">36.0 LPM</strong></span>
+              <span>Water Meter Inputs: <strong class="text-cyan">3 Channels Online</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 4: iSense Soil Probe -->
+      <div class="product-panel" id="tab-sense" role="tabpanel">
+        <div class="product-detail-grid">
+          <div class="product-info-col">
+            <div class="product-intro-header">
+              <div class="product-kicker">Smart Soil Moisture Monitoring Device</div>
+              <h3 class="product-main-title">iSense Soil Senses</h3>
+              <p class="product-lead-text">
+                iSense is a smart soil moisture sensor for precision irrigation, enabling smarter decisions and greater farming success with accurate multi-depth calibration and instant threshold alerts.
+              </p>
+            </div>
+
+            <div class="features-bullet-grid">
+              <div class="feature-bullet-item">
+                <h4 class="feature-bullet-title">Multi-Point Monitoring</h4>
+                <p class="feature-bullet-desc">Supports up to four independent soil moisture sensors across varied soil horizons.</p>
+              </div>
+              <div class="feature-bullet-item">
+                <h4 class="feature-bullet-title">Live Moisture Monitoring</h4>
+                <p class="feature-bullet-desc">"How much water your farm has, you can see here" — continuous volumetric telemetry.</p>
+              </div>
+              <div class="feature-bullet-item">
+                <h4 class="feature-bullet-title">Sensor Calibration</h4>
+                <p class="feature-bullet-desc">Configure custom dry and wet reference values tailored to sandy, loam, or black cotton soil.</p>
+              </div>
+              <div class="feature-bullet-item">
+                <h4 class="feature-bullet-title">Dry & Wet Alerts</h4>
+                <p class="feature-bullet-desc">Receive automatic push and SMS notifications when moisture crosses critical thresholds.</p>
+              </div>
+              <div class="feature-bullet-item">
+                <h4 class="feature-bullet-title">Solar Powered</h4>
+                <p class="feature-bullet-desc">Integrated solar charging with rechargeable battery for zero battery swaps in field.</p>
+              </div>
+              <div class="feature-bullet-item">
+                <h4 class="feature-bullet-title">Rugged Outdoor Design</h4>
+                <p class="feature-bullet-desc">Dust-and-water-resistant enclosure built to withstand direct tractor passes and rain.</p>
+              </div>
+            </div>
+
+            <!-- Technical Specifications Table -->
+            <div class="specs-table-box">
+              <div class="specs-table-title">
+                <span>iSense TECHNICAL SPECIFICATIONS</span>
+                <span>PDF SOURCE OF TRUTH</span>
+              </div>
+              <table class="specs-table">
+                <tbody>
+                  <tr>
+                    <td class="spec-param">Sensors Supported</td>
+                    <td class="spec-val">Up to 4 Independent Soil Moisture Sensors</td>
+                  </tr>
+                  <tr>
+                    <td class="spec-param">Internal Battery</td>
+                    <td class="spec-val">3.7V Rechargeable Battery</td>
+                  </tr>
+                  <tr>
+                    <td class="spec-param">Power Source</td>
+                    <td class="spec-val">Integrated Solar Panel Charging</td>
+                  </tr>
+                  <tr>
+                    <td class="spec-param">Threshold Configuration</td>
+                    <td class="spec-val">Custom Dry & Wet Reference Values</td>
+                  </tr>
+                  <tr>
+                    <td class="spec-param">Maintenance</td>
+                    <td class="spec-val">Ultra-Low Maintenance Outdoor Hermetic Seal</td>
+                  </tr>
+                  <tr>
+                    <td class="spec-param">Connectivity</td>
+                    <td class="spec-val">Long-Range LoRa to iNet Cloud Gateway</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Interactive Simulator: Soil Moisture Depth Slider -->
+          <div class="interactive-simulator-card">
+            <div class="sim-header">
+              <span class="sim-badge">PRECISION SOIL PROFILE SIMULATOR</span>
+              <span class="mono-tag text-emerald">Depth: 10cm to 60cm</span>
+            </div>
+
+            <div style="border-radius: 12px; overflow: hidden; margin-bottom: 20px; border: 1px solid rgba(0,229,153,0.2);">
+              <img src="assets/images/soil-probe-roots.jpg" alt="iSense 4-Prong Sensor in Soil Root Network" style="width: 100%; height: 220px; object-fit: cover;">
+            </div>
+
+            <div class="isense-gauge-wrapper">
+              <div class="telemetry-tag" style="margin-bottom: 6px;">ADJUST SOIL MOISTURE TEST LEVEL:</div>
+              <div class="telemetry-val" id="isenseMoistureNum" style="font-size: 2.8rem; color: var(--emerald-primary);">
+                68%
+              </div>
+              <div id="isenseMoistureStatusText" class="mono-tag text-emerald" style="margin-bottom: 12px;">
+                STATUS: OPTIMAL MOISTURE (NO IRRIGATION NEEDED)
+              </div>
+
+              <input type="range" min="10" max="100" value="68" class="moisture-slider-control" id="isenseMoistureSlider">
+
+              <div class="moisture-depth-levels">
+                <div class="depth-level-pill">
+                  <span>10cm: </span><strong id="depth1">62%</strong>
+                </div>
+                <div class="depth-level-pill">
+                  <span>25cm: </span><strong id="depth2">68%</strong>
+                </div>
+                <div class="depth-level-pill">
+                  <span>40cm: </span><strong id="depth3">72%</strong>
+                </div>
+                <div class="depth-level-pill">
+                  <span>60cm: </span><strong id="depth4">75%</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 5: iNet IoT Gateway -->
+      <div class="product-panel" id="tab-net" role="tabpanel">
+        <div class="product-detail-grid">
+          <div class="product-info-col">
+            <div class="product-intro-header">
+              <div class="product-kicker">Smart IoT Gateway for Reliable Connectivity</div>
+              <h3 class="product-main-title">iNet Gateway</h3>
+              <p class="product-lead-text">
+                iNet keeps your farm connected with secure, dependable IoT communication between field devices and the cloud. With reliable 4G connectivity and real-time control, it helps ensure uninterrupted operations in every season.
+              </p>
+            </div>
+
+            <div class="features-bullet-grid">
+              <div class="feature-bullet-item">
+                <h4 class="feature-bullet-title">Long-Range Communication</h4>
+                <p class="feature-bullet-desc">Supports up to 3km of long-range LoRa wireless communication across expansive crop fields.</p>
+              </div>
+              <div class="feature-bullet-item">
+                <h4 class="feature-bullet-title">Integrated 4G Cloud</h4>
+                <p class="feature-bullet-desc">Dedicated SIM slot for secure 4G connectivity. Connects LoRa devices to the cloud seamlessly.</p>
+              </div>
+              <div class="feature-bullet-item">
+                <h4 class="feature-bullet-title">Solar Powered Operation</h4>
+                <p class="feature-bullet-desc">12V solar panel with rechargeable battery for 24x7 autonomous outdoor operation.</p>
+              </div>
+              <div class="feature-bullet-item">
+                <h4 class="feature-bullet-title">Rugged Outdoor Design</h4>
+                <p class="feature-bullet-desc">Dust-and-water-resistant enclosure for reliable operation in extreme outdoor agricultural conditions.</p>
+              </div>
+              <div class="feature-bullet-item">
+                <h4 class="feature-bullet-title">Built-in GPS</h4>
+                <p class="feature-bullet-desc">Integrated GPS for real-time time synchronization and gateway geographic location tracking.</p>
+              </div>
+              <div class="feature-bullet-item">
+                <h4 class="feature-bullet-title">Centralized Cloud Support</h4>
+                <p class="feature-bullet-desc">Monitor all connected devices from the cloud and get remote support for rapid issue resolution.</p>
+              </div>
+            </div>
+
+            <!-- Technical Specifications Table -->
+            <div class="specs-table-box">
+              <div class="specs-table-title">
+                <span>iNet TECHNICAL SPECIFICATIONS</span>
+                <span>PDF SOURCE OF TRUTH</span>
+              </div>
+              <table class="specs-table">
+                <tbody>
+                  <tr>
+                    <td class="spec-param">Solar Panel</td>
+                    <td class="spec-val">12V High-Efficiency Solar Panel</td>
+                  </tr>
+                  <tr>
+                    <td class="spec-param">Internal Battery</td>
+                    <td class="spec-val">3.7V Rechargeable</td>
+                  </tr>
+                  <tr>
+                    <td class="spec-param">Backup Time</td>
+                    <td class="spec-val">Up to 72 Hours Continuous</td>
+                  </tr>
+                  <tr>
+                    <td class="spec-param">LoRa Coverage</td>
+                    <td class="spec-val">Long Range LoRa Up to 3km</td>
+                  </tr>
+                  <tr>
+                    <td class="spec-param">Cloud Connectivity</td>
+                    <td class="spec-val">GSM / WiFi / LTE with Dedicated SIM Slot</td>
+                  </tr>
+                  <tr>
+                    <td class="spec-param">GPS Integration</td>
+                    <td class="spec-val">GPS Integrated for Real-Time Sync & Monitoring</td>
+                  </tr>
+                  <tr>
+                    <td class="spec-param">Operation</td>
+                    <td class="spec-val">24x7 Autonomous Operation</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Interactive Simulator: iNet Radar & Coverage -->
+          <div class="interactive-simulator-card">
+            <div class="sim-header">
+              <span class="sim-badge">3KM LORA MESH RADAR COVERAGE</span>
+              <span class="mono-tag text-cyan">GPS Sync Active</span>
+            </div>
+
+            <div style="position: relative; width: 100%; height: 320px; background: #06110a; border-radius: 16px; border: 1px solid rgba(0,229,153,0.3); overflow: hidden; display: flex; align-items: center; justify-content: center;">
+              <!-- Radar Circles -->
+              <div style="position: absolute; width: 90px; height: 90px; border-radius: 50%; border: 1px dashed rgba(0,229,153,0.4);"></div>
+              <div style="position: absolute; width: 180px; height: 180px; border-radius: 50%; border: 1px dashed rgba(0,229,153,0.3);"></div>
+              <div style="position: absolute; width: 270px; height: 270px; border-radius: 50%; border: 1px solid rgba(0,229,153,0.25);"></div>
+              
+              <!-- Center Hub -->
+              <div style="width: 22px; height: 22px; border-radius: 50%; background: var(--cyan-primary); box-shadow: 0 0 20px var(--cyan-primary); z-index: 5;"></div>
+              
+              <!-- Transmitters on perimeter -->
+              <div style="position: absolute; top: 35px; left: 80px; font-family: var(--font-mono); font-size: 0.72rem; color: var(--emerald-primary);">
+                ● iSense #1 (1.2km)
+              </div>
+              <div style="position: absolute; bottom: 45px; right: 60px; font-family: var(--font-mono); font-size: 0.72rem; color: var(--emerald-primary);">
+                ● iValve #3 (2.6km)
+              </div>
+              <div style="position: absolute; top: 60px; right: 70px; font-family: var(--font-mono); font-size: 0.72rem; color: var(--emerald-primary);">
+                ● iPump Hub (0.8km)
+              </div>
+            </div>
+
+            <div class="telemetry-meta" style="margin-top: 20px;">
+              <span>Sim Slot: <strong>Active 4G VoLTE</strong></span>
+              <span>Coordinates: <strong>22.9734° N, 78.6569° E</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 6: Valves & Accessories (From Page 6 of PDF) -->
+      <div class="product-panel" id="tab-acc" role="tabpanel">
+        <div class="product-intro-header text-center" style="max-width: 700px; margin: 0 auto 40px;">
+          <div class="product-kicker">Valves & Field Accessories</div>
+          <h3 class="product-main-title">Certified Heavy-Duty Accessories</h3>
+          <p class="product-lead-text">
+            Official hydraulic fittings, precision flow meters, and electrical enclosures tested and certified for full compatibility with the Agripulse iRoot ecosystem.
+          </p>
+        </div>
+
+        <div class="accessories-catalog-grid">
+          <div class="accessory-card">
+            <img src="assets/images/acc-valve.png" alt="Valve - 2, 3, 4 inch" class="accessory-img">
+            <h4 class="accessory-name">Valve - 2", 3", 4"</h4>
+            <p class="accessory-desc">High-pressure latching solenoid valves designed for precision drip and sprinkler automation.</p>
+          </div>
+
+          <div class="accessory-card">
+            <img src="assets/images/acc-sustain.png" alt="Pressure Sustain Valve" class="accessory-img">
+            <h4 class="accessory-name">Pressure Sustain Valve</h4>
+            <p class="accessory-desc">Maintains pre-set upstream pressure to safeguard drip emitters from hydraulic water hammering.</p>
+          </div>
+
+          <div class="accessory-card">
+            <img src="assets/images/acc-flowmeter.png" alt="Flow Meter" class="accessory-img">
+            <h4 class="accessory-name">Digital Flow Meter</h4>
+            <p class="accessory-desc">Pulse-output volumetric water meter for real-time consumption telemetry into iRoot.</p>
+          </div>
+
+          <div class="accessory-card">
+            <img src="assets/images/acc-relief.png" alt="Pressure Relief Valve" class="accessory-img">
+            <h4 class="accessory-name">Pressure Relief Valve</h4>
+            <p class="accessory-desc">Automatic line discharge valve preventing burst pipes during sudden pump line pressurization.</p>
+          </div>
+
+          <div class="accessory-card">
+            <img src="assets/images/acc-fusebox.png" alt="Fuse Box" class="accessory-img">
+            <h4 class="accessory-name">Fuse Box & Surge Guard</h4>
+            <p class="accessory-desc">Industrial electrical isolator protecting sensitive IoT controllers from grid lightning and spikes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       INTERACTIVE FIELD COMMAND CENTER / SANDBOX
+       ========================================================================== -->
+  <section class="section-spacing sandbox-section" id="sandbox">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-badge">Live Farm Command Simulator</div>
+        <h2 class="section-title">
+          SIMULATE REAL-WORLD <span class="gradient-text">FIELD CONDITIONS</span>
+        </h2>
+        <p class="section-desc">
+          Test how the entire Agripulse iRoot ecosystem reacts autonomously to agricultural emergencies and environmental changes without any manual intervention.
+        </p>
+      </div>
+
+      <div class="sandbox-container">
+        <!-- Scenario Selector Buttons -->
+        <div class="scenario-selector-grid">
+          <button class="scenario-btn active" data-scenario="heatwave">
+            <div class="scenario-name">☀️ Midday Heatwave (42°C)</div>
+            <div class="scenario-desc">Moisture plummets below critical threshold</div>
+          </button>
+          <button class="scenario-btn" data-scenario="phasefault">
+            <div class="scenario-name">⚠️ Grid Phase Failure</div>
+            <div class="scenario-desc">Y-Phase line drops voltage to 0V</div>
+          </button>
+          <button class="scenario-btn" data-scenario="downpour">
+            <div class="scenario-name">🌧️ Monsoon Downpour</div>
+            <div class="scenario-desc">Soil moisture reaches 95% saturation</div>
+          </button>
+          <button class="scenario-btn" data-scenario="nightdrip">
+            <div class="scenario-name">🌙 Scheduled Night Drip</div>
+            <div class="scenario-desc">Auto-sequence valves 1 through 4</div>
+          </button>
+        </div>
+
+        <!-- Telemetry Board -->
+        <div class="sandbox-telemetry-board">
+          <div class="sandbox-board-node">
+            <div class="node-label">iSense Root Sensor</div>
+            <div class="node-state-headline" id="sbIsenseState">41% Low Moisture</div>
+            <div class="node-state-desc" id="sbIsenseAction">Triggering Urgent Irrigation Event</div>
+          </div>
+
+          <div class="sandbox-board-node">
+            <div class="node-label">iNet 3km Gateway</div>
+            <div class="node-state-headline" id="sbInetState">LoRa Packet 0.12s</div>
+            <div class="node-state-desc" id="sbInetAction">Relaying Payload via 4G Cloud</div>
+          </div>
+
+          <div class="sandbox-board-node">
+            <div class="node-label">iPump Controller</div>
+            <div class="node-state-headline" id="sbIpumpState">PUMP ENGAGED</div>
+            <div class="node-state-desc" id="sbIpumpAction">3-Phase 415V Normal Current</div>
+          </div>
+
+          <div class="sandbox-board-node">
+            <div class="node-label">iValve Controller</div>
+            <div class="node-state-headline" id="sbIvalveState">Zones 1 & 2 Open</div>
+            <div class="node-state-desc" id="sbIvalveAction">Targeting Parched Citrus Sector</div>
+          </div>
+        </div>
+
+        <div style="background: rgba(0,0,0,0.4); padding: 18px 24px; border-radius: 12px; display: flex; align-items: center; justify-content: space-between; font-family: var(--font-mono); font-size: 0.85rem;">
+          <span style="color: var(--text-secondary);">SYSTEM REACTION LOG: <strong id="sbLogText" class="text-emerald">Cloud algorithm triggered auto-irrigation in 1.4 seconds. No manual intervention required.</strong></span>
+          <span class="pulse-dot"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ROI & WATER SAVINGS CALCULATOR
+       ========================================================================== -->
+  <section class="section-spacing roi-section" id="calculator">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-badge">Commercial & Operational Impact</div>
+        <h2 class="section-title">
+          FARM ROI & <span class="gradient-text">WATER SAVINGS CALCULATOR</span>
+        </h2>
+        <p class="section-desc">
+          Calculate the tangible financial savings, water preservation, and motor burnout repair prevention achievable across your acreage with iRoot.
+        </p>
+      </div>
+
+      <div class="calculator-grid">
+        <div class="calculator-inputs-box">
+          <div class="calc-input-group">
+            <div class="calc-label-row">
+              <span>Farm Cultivated Area (Acres):</span>
+              <span class="calc-value-badge" id="calcAreaVal">25 Acres</span>
+            </div>
+            <input type="range" min="5" max="250" value="25" step="5" class="calc-slider" id="calcAreaSlider">
+          </div>
+
+          <div class="calc-input-group">
+            <div class="calc-label-row">
+              <span>Primary Crop Profile:</span>
+            </div>
+            <select class="calc-select" id="calcCropSelect">
+              <option value="horticulture">Horticulture & Fruits (Pomegranate, Citrus, Grapes)</option>
+              <option value="cashcrops">Cash Crops (Cotton, Sugarcane, Soybean)</option>
+              <option value="vegetables">Open Field Vegetables (Tomato, Chili, Onion)</option>
+              <option value="orchards">Commercial Orchards & Nut Plantations</option>
+            </select>
+          </div>
+
+          <div class="calc-input-group">
+            <div class="calc-label-row">
+              <span>Current Irrigation Method:</span>
+            </div>
+            <select class="calc-select" id="calcMethodSelect">
+              <option value="flood">Traditional Flood Irrigation (High Loss)</option>
+              <option value="manual">Manual Drip (Requires Physical Valve Turning)</option>
+              <option value="timer">Basic Timer Drip (No Soil Feedback)</option>
+            </select>
+          </div>
+
+          <div class="calc-input-group">
+            <div class="calc-label-row">
+              <span>Water Source:</span>
+            </div>
+            <select class="calc-select" id="calcSourceSelect">
+              <option value="borewell">Deep Borewell (High Electricity & Pump Stress)</option>
+              <option value="canal">Canal / Farm Pond (Limited Window)</option>
+              <option value="tanker">Commercial Water Tanker Supply</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="calculator-results-box">
+          <h3 class="calc-results-title">Estimated Annual Farm Savings</h3>
+          <div class="results-metric-list">
+            <div class="result-metric-item">
+              <div class="result-metric-title">Groundwater / Irrigation Saved:</div>
+              <div class="result-metric-val" id="resultWater">4.2M Litres</div>
+            </div>
+
+            <div class="result-metric-item">
+              <div class="result-metric-title">Electricity & Power Cost Savings:</div>
+              <div class="result-metric-val" id="resultPower">₹ 85,000 /yr</div>
+            </div>
+
+            <div class="result-metric-item">
+              <div class="result-metric-title">Motor Burnouts & Rewinding Saved:</div>
+              <div class="result-metric-val" id="resultMotor">₹ 42,000 /yr</div>
+            </div>
+
+            <div class="result-metric-item">
+              <div class="result-metric-title">Labor & Valve Commute Hours Freed:</div>
+              <div class="result-metric-val" id="resultLabor">650 Hours</div>
+            </div>
+          </div>
+
+          <div style="margin-top: 36px; text-align: center;">
+            <a href="#contact" class="btn btn-primary" style="width: 100%;">
+              <span>Get Customized Field Feasibility Report</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       BENEFITS SECTION (4 PDF PILLARS)
+       ========================================================================== -->
+  <section class="section-spacing benefits-section" id="benefits">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-badge">Why Agripulse?</div>
+        <h2 class="section-title">
+          SMARTER IRRIGATION. <span class="gradient-text">SUCCESSFUL AGRICULTURE.</span>
+        </h2>
+        <p class="section-desc">
+          At Agripulse, we empower growers to turn smarter irrigation into greater success. iRoot optimizes water, improves crop productivity, simplifies operations, and builds a sustainable future for farming.
+        </p>
+      </div>
+
+      <!-- 4 Core Pillars from PDF Page 8 -->
+      <div class="benefits-quad-grid">
+        <div class="benefit-quad-card">
+          <div class="benefit-quad-icon">⚙️</div>
+          <h3 class="benefit-quad-title">Intelligent Automation</h3>
+          <p class="benefit-quad-desc">
+            Remote irrigation control with seamless cloud connectivity. Say goodbye to midnight commutes to manually start pumps or switch valve levers.
+          </p>
+        </div>
+
+        <div class="benefit-quad-card">
+          <div class="benefit-quad-icon">💧</div>
+          <h3 class="benefit-quad-title">Water Efficient</h3>
+          <p class="benefit-quad-desc">
+            Optimized irrigation for sustainable farming. Eliminates over-irrigation runoff and under-irrigation crop stress through precise root-depth sensing.
+          </p>
+        </div>
+
+        <div class="benefit-quad-card">
+          <div class="benefit-quad-icon">📡</div>
+          <h3 class="benefit-quad-title">Reliable Communication</h3>
+          <p class="benefit-quad-desc">
+            Long-range LoRa technology up to 3km penetrating dense foliage, undulations, and remote rural plots where Wi-Fi or Bluetooth fail.
+          </p>
+        </div>
+
+        <div class="benefit-quad-card">
+          <div class="benefit-quad-icon">🛡️</div>
+          <h3 class="benefit-quad-title">Built for Agriculture</h3>
+          <p class="benefit-quad-desc">
+            Engineered for demanding outdoor environments. IP65 weather-proof enclosures, -20°C to +60°C tolerances, and high-surge lightning protection.
+          </p>
+        </div>
+      </div>
+
+      <!-- Feature Comparison: Traditional vs iRoot -->
+      <div class="comparison-container">
+        <h3 class="text-center" style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 24px; color: var(--text-white);">
+          Traditional Farm Practice vs. The Agripulse iRoot Way
+        </h3>
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Irrigation Parameter</th>
+              <th>Traditional Farming</th>
+              <th class="col-highlight">Agripulse iRoot Ecosystem</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-feature">Pump Control & Scheduling</td>
+              <td class="col-traditional">Manual travel to starter room at all hours</td>
+              <td class="col-iroot">Automated mobile triggers + Cloud AI schedules</td>
+            </tr>
+            <tr>
+              <td class="col-feature">Motor Burnout & Dry Run Guard</td>
+              <td class="col-traditional">High risk of burnt coils & rewinding expenses</td>
+              <td class="col-iroot">Real-time 3-Phase RYB & Overload auto-cutoff</td>
+            </tr>
+            <tr>
+              <td class="col-feature">Multi-Zone Valve Switching</td>
+              <td class="col-traditional">Labor intensive, manual valve wheel turning</td>
+              <td class="col-iroot">Up to 10 Latching solenoids automated wirelessly</td>
+            </tr>
+            <tr>
+              <td class="col-feature">Soil Moisture Measurement</td>
+              <td class="col-traditional">Visual finger testing and guesswork</td>
+              <td class="col-iroot">iSense 4-point volumetric root probe data</td>
+            </tr>
+            <tr>
+              <td class="col-feature">Power Outage Recovery</td>
+              <td class="col-traditional">Pump stays off until someone physically returns</td>
+              <td class="col-iroot">Auto-restart when safe 3-phase grid power returns</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ABOUT SECTION
+       ========================================================================== -->
+  <section class="section-spacing about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual-frame">
+          <img src="assets/images/field-telemetry-farmer.jpg" alt="Farmer managing smart irrigation with iRoot on rugged smartphone" class="about-visual-img">
+          <div class="about-stats-overlay">
+            <div class="about-stat-item">
+              <strong>100%</strong>
+              <span>Made in India</span>
+            </div>
+            <div class="about-stat-item">
+              <strong>3km</strong>
+              <span>Field Range</span>
+            </div>
+            <div class="about-stat-item">
+              <strong>99.9%</strong>
+              <span>Motor Uptime</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-content">
+          <div class="section-badge">About Agripulse Private Limited</div>
+          <h2 class="section-title">
+            POWERING <span class="gradient-text">FARMING SUCCESS.</span>
+          </h2>
+          <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">
+            At Agripulse, we empower growers to turn smarter irrigation into greater success. With intelligent automation, real-time monitoring, and reliable connectivity, iRoot helps optimize water, improve productivity, simplify operations, and build a more successful and sustainable future for farming.
+          </p>
+          <p style="color: var(--text-secondary); font-size: 1.0rem; line-height: 1.7; margin-bottom: 30px;">
+            Agripulse is committed to empowering farmers with innovative IoT solutions that make irrigation smarter, farming more productive, and agriculture sustainable for future generations.
+          </p>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 32px;">
+            <div style="background: var(--bg-card); padding: 18px; border-radius: 12px; border: 1px solid rgba(0,229,153,0.15);">
+              <div class="mono-tag text-emerald" style="margin-bottom: 6px;">OUR VISION</div>
+              <div style="color: var(--text-white); font-weight: 600; font-size: 0.95rem;">Sustainable groundwater security through automated precision.</div>
+            </div>
+            <div style="background: var(--bg-card); padding: 18px; border-radius: 12px; border: 1px solid rgba(0,229,153,0.15);">
+              <div class="mono-tag text-emerald" style="margin-bottom: 6px;">OUR ENGINEERING</div>
+              <div style="color: var(--text-white); font-weight: 600; font-size: 0.95rem;">Hardware tested for -20°C to +60°C and 415V electrical variations.</div>
+            </div>
+          </div>
+
+          <a href="#contact" class="btn btn-primary">
+            <span>Partner With Agripulse</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CONTACT & DEMO REQUEST SECTION
+       ========================================================================== -->
+  <section class="section-spacing contact-section" id="contact">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-badge">Get In Touch</div>
+        <h2 class="section-title">
+          TRANSFORM YOUR FARM: <span class="gradient-text">REQUEST A DEMO</span>
+        </h2>
+        <p class="section-desc">
+          Connect with our agricultural IoT specialists for a field evaluation, hardware pricing, or custom dealership inquiries.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Information Card -->
+        <div class="contact-info-card">
+          <h3 style="font-family: var(--font-heading); font-size: 1.6rem; color: var(--text-white); margin-bottom: 12px;">
+            Agripulse Private Limited
+          </h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+            Visit our corporate office or reach our direct support line to explore the complete iRoot Smart Irrigation Ecosystem.
+          </p>
+
+          <div class="contact-detail-items">
+            <a href="https://www.agripulseindia.com" target="_blank" rel="noopener" class="contact-detail-item">
+              <div class="contact-icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              </div>
+              <div>
+                <div class="mono-tag text-secondary">OFFICIAL WEBSITE</div>
+                <div style="font-weight: 600; color: var(--text-white);">www.agripulseindia.com</div>
+              </div>
+            </a>
+
+            <a href="mailto:info@agripulse.in" class="contact-detail-item">
+              <div class="contact-icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <div>
+                <div class="mono-tag text-secondary">EMAIL INQUIRIES</div>
+                <div style="font-weight: 600; color: var(--text-white);">info@agripulse.in</div>
+              </div>
+            </a>
+
+            <a href="tel:+919619171636" class="contact-detail-item">
+              <div class="contact-icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <div>
+                <div class="mono-tag text-secondary">TELEPHONE / WHATSAPP</div>
+                <div style="font-weight: 600; color: var(--text-white);">+91 96191 71636</div>
+              </div>
+            </a>
+
+            <div class="contact-detail-item">
+              <div class="contact-icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div>
+                <div class="mono-tag text-secondary">GEOGRAPHIC PRESENCE</div>
+                <div style="font-weight: 600; color: var(--text-white);">India (Pan-India Deployment & Support)</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mono-tag text-secondary" style="margin-top: 24px;">FOLLOW AGRIPULSE</div>
+          <div class="contact-social-row">
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-icon-link" title="LinkedIn" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" class="social-icon-link" title="YouTube" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="social-icon-link" title="Facebook" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-icon-link" title="Instagram" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Interactive Form -->
+        <div class="contact-form-box">
+          <h3 style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--text-white); margin-bottom: 8px;">
+            Book an On-Field Demo
+          </h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 24px;">
+            Please share your farm details and our regional agronomist will schedule an on-site visit.
+          </p>
+
+          <form id="demoRequestForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="formName">Full Name *</label>
+                <input type="text" id="formName" class="form-input" placeholder="e.g. Bhupendra Chouhan" required>
+              </div>
+              <div class="form-group">
+                <label for="formPhone">Phone Number *</label>
+                <input type="tel" id="formPhone" class="form-input" placeholder="+91 98765 43210" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="formEmail">Email Address</label>
+                <input type="email" id="formEmail" class="form-input" placeholder="farmer@example.com">
+              </div>
+              <div class="form-group">
+                <label for="formLocation">State / District (India) *</label>
+                <input type="text" id="formLocation" class="form-input" placeholder="e.g. Maharashtra / Gujarat" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="formAcreage">Cultivated Acreage *</label>
+                <select id="formAcreage" class="form-select" required>
+                  <option value="">Select Acreage Range</option>
+                  <option value="5-15">5 to 15 Acres</option>
+                  <option value="15-50">15 to 50 Acres</option>
+                  <option value="50-150">50 to 150 Acres</option>
+                  <option value="150+">150+ Commercial Acres</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="formCropType">Primary Crop</label>
+                <input type="text" id="formCropType" class="form-input" placeholder="e.g. Cotton, Pomegranate, Sugarcane">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Products of Interest (Multiple):</label>
+              <div class="checkbox-group">
+                <label class="checkbox-label"><input type="checkbox" name="interest" value="iPump" checked> iPump Controller</label>
+                <label class="checkbox-label"><input type="checkbox" name="interest" value="iValve" checked> iValve Controller</label>
+                <label class="checkbox-label"><input type="checkbox" name="interest" value="iSense" checked> iSense Soil Sensor</label>
+                <label class="checkbox-label"><input type="checkbox" name="interest" value="iNet" checked> iNet IoT Gateway</label>
+                <label class="checkbox-label"><input type="checkbox" name="interest" value="App" checked> iRoot Mobile App</label>
+                <label class="checkbox-label"><input type="checkbox" name="interest" value="Accessories"> Valves & Fittings</label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="formNotes">Specific Field Requirements / Motor HP</label>
+              <textarea id="formNotes" class="form-textarea" placeholder="Describe your existing pump starter, water source, or specific problems..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;" id="submitFormBtn">
+              <span>Submit Demo Request</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Modal -->
+  <div class="modal-overlay" id="successModal" role="dialog" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close Modal">&times;</button>
+      <div class="modal-icon-badge">✓</div>
+      <h3 style="font-family: var(--font-heading); font-size: 1.6rem; color: var(--text-white); margin-bottom: 10px;">
+        Request Confirmed!
+      </h3>
+      <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;" id="modalFeedbackText">
+        Thank you! Your demo request has been dispatched to the Agripulse Technical Deployment Team. A regional field engineer will contact you within 24 hours.
+      </p>
+      <div style="background: rgba(0,229,153,0.1); border: 1px dashed var(--emerald-primary); padding: 12px; border-radius: 8px; font-family: var(--font-mono); font-size: 0.85rem; color: var(--emerald-primary); margin-bottom: 24px;">
+        REFERENCE CODE: <span id="modalRefCode">AGRI-DEMO-8924</span>
+      </div>
+      <button class="btn btn-primary" id="modalOkBtn" style="width: 100%;">
+        Return to Website
+      </button>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-col-brand">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="assets/images/iroot-logo.png" alt="iRoot Brand Logo" style="height: 36px;">
+            <span style="font-family: var(--font-heading); font-weight: 800; font-size: 1.2rem; color: var(--text-white);">
+              AGRIPULSE
+            </span>
+          </div>
+          <p>
+            Precision Irrigation • Intelligent Control • Sustainable Farming. Agripulse Private Limited empowers growers with next-generation agricultural IoT solutions.
+          </p>
+          <div class="mono-tag text-emerald">VERSION 1.0 • PRODUCT CATALOGUE</div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">iRoot Ecosystem</h4>
+          <ul class="footer-links-list">
+            <li><a href="#products">iRoot Mobile App</a></li>
+            <li><a href="#products">iPump Controller</a></li>
+            <li><a href="#products">iValve Controller</a></li>
+            <li><a href="#products">iSense Soil Senses</a></li>
+            <li><a href="#products">iNet IoT Gateway</a></li>
+            <li><a href="#products">Valves & Accessories</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Solutions</h4>
+          <ul class="footer-links-list">
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#sandbox">Field Command Center</a></li>
+            <li><a href="#calculator">Savings Calculator</a></li>
+            <li><a href="#benefits">Why Agripulse</a></li>
+            <li><a href="#about">About Company</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Contact & Support</h4>
+          <ul class="footer-links-list">
+            <li><a href="mailto:info@agripulse.in">info@agripulse.in</a></li>
+            <li><a href="tel:+919619171636">+91 96191 71636</a></li>
+            <li><a href="https://www.agripulseindia.com" target="_blank" rel="noopener">www.agripulseindia.com</a></li>
+            <li><span style="color: var(--text-secondary); font-size: 0.9rem;">India</span></li>
+            <li><a href="#contact" class="text-emerald" style="font-weight: 600;">Request On-Site Demo &rarr;</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>
+          &copy; <span id="copyrightYear">2026</span> Agripulse Private Limited. All Rights Reserved.
+        </div>
+        <div>
+          <span>Smart Technology. Better Efficiency. Farming Success.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- App Logic -->
+  <script src="js/app.js"></script>
+</body>
+</html>
