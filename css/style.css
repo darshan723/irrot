@@ -689,13 +689,11 @@ body {
 }
 
 /* ==========================================================================
-   CINEMATIC HERO SLIDER
+   CINEMATIC HERO BANNER SLIDER
    ========================================================================== */
 .cinematic-hero {
   position: relative;
   width: 100%;
-  height: calc(100vh - 68px);
-  min-height: 600px;
   margin-top: 68px;
   overflow: hidden;
   background: #00425a;
@@ -703,17 +701,17 @@ body {
 .hero-slider {
   position: relative;
   width: 100%;
-  height: 100%;
+  aspect-ratio: 1024 / 571;
+  max-height: min(80vh, 760px);
+  min-height: 220px;
 }
 .hero-slide {
   position: absolute;
   inset: 0;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 1.1s cubic-bezier(0.4, 0, 0.2, 1),
-              visibility 1.1s cubic-bezier(0.4, 0, 0.2, 1);
-  display: flex;
-  align-items: center;
+  transition: opacity 0.7s ease, visibility 0.7s ease;
+  display: block;
 }
 .hero-slide.active {
   opacity: 1;
@@ -726,9 +724,22 @@ body {
   z-index: 1;
 }
 
+.slide-banner-link {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  cursor: pointer;
+  z-index: 4;
+}
+
 .slide-bg {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
 }
 .slide-bg img {
@@ -736,25 +747,78 @@ body {
   height: 100%;
   object-fit: cover;
   object-position: center center;
-  transform: scale(1.05);
-  transition: transform 7s ease;
+  display: block;
+  filter: none;
+  transform: scale(1.0);
+  transition: transform 6s ease;
 }
 .hero-slide.active .slide-bg img {
-  transform: scale(1.0);
+  transform: scale(1.02);
 }
 
-/* Hero Overlay — Rich organic deep teal-to-transparent vignette so photos shine */
-.slide-overlay {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(to right, rgba(0, 66, 90, 0.86) 0%, rgba(30, 85, 61, 0.55) 50%, rgba(0, 0, 0, 0.12) 100%),
-    linear-gradient(to top, rgba(0, 66, 90, 0.8) 0%, transparent 45%);
-}
+/* Slide overlay: hidden so authentic banner poster visuals shine with 100% clarity */
+.slide-overlay,
 .slide-overlay--dark {
-  background:
-    linear-gradient(to right, rgba(0, 66, 90, 0.90) 0%, rgba(30, 85, 61, 0.65) 60%, rgba(0, 0, 0, 0.2) 100%),
-    linear-gradient(to top, rgba(0, 66, 90, 0.85) 0%, transparent 50%);
+  display: none !important;
+}
+
+/* Accessibility hidden utility */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Farmer Bilingual Ribbon (active when Hindi is selected) */
+.hero-hindi-banner-ribbon {
+  background: linear-gradient(135deg, #1e553d 0%, #00425a 100%);
+  color: #ffffff;
+  padding: 10px 0;
+  border-bottom: 2px solid #6a9718;
+}
+.hindi-ribbon-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.hindi-badge {
+  background: #6a9718;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+.hindi-ribbon-text {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin: 0;
+  flex: 1;
+  color: #f1f8f3;
+}
+.hindi-ribbon-btn {
+  background: #ffffff;
+  color: #1e553d;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.hindi-ribbon-btn:hover {
+  background: #6a9718;
+  color: #ffffff;
 }
 
 .slide-content {
@@ -2355,8 +2419,8 @@ body {
   .navbar { height: 60px; }
   .nav-wrapper-premium { grid-template-columns: auto 1fr auto; padding: 0 18px; height: 60px; }
   .ham-label { display: none; }
-  .brand-logo-img-center { height: 38px; }
-  .cinematic-hero { margin-top: 60px; height: calc(100vh - 60px); }
+  .cinematic-hero { margin-top: 60px; height: auto; min-height: auto; }
+  .hero-slider { aspect-ratio: 1024 / 571; height: auto; min-height: auto; max-height: none; }
 
   .site-drawer { width: 100vw; padding: 28px 28px 40px; }
   .drawer-brand-iroot { font-size: 1.8rem; }

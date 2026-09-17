@@ -183,6 +183,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevBtn = document.getElementById('heroPrev');
     const nextBtn = document.getElementById('heroNext');
     const counter = document.getElementById('heroCurrentSlide');
+    const totalCountEl = document.getElementById('heroTotalSlides');
+    const hindiRibbon = document.getElementById('heroHindiRibbon');
+    const hindiRibbonText = document.getElementById('heroHindiRibbonText');
 
     if (!slides.length) return;
 
@@ -190,7 +193,36 @@ document.addEventListener('DOMContentLoaded', () => {
     let timer   = null;
     const INTERVAL = 5000;
 
+    const hindiSlideTexts = [
+      'एग्रीपल्स iRoot: हर बूँद का सही उपयोग। सटीक सिंचाई और मोटर सुरक्षा।',
+      'एक सम्पूर्ण इकोसिस्टम, सम्पूर्ण नियंत्रण — iRoot मोबाइल ऐप द्वारा कहीं से भी।',
+      'अपने पूरे खेत को एक स्मार्ट नेटवर्क से जोड़ें और पानी व बिजली बचाएं।'
+    ];
+
     function pad(n) { return String(n + 1).padStart(2, '0'); }
+
+    if (totalCountEl) totalCountEl.textContent = pad(slides.length - 1);
+
+    function updateHindiRibbon(idx) {
+      if (hindiRibbonText && hindiSlideTexts[idx]) {
+        hindiRibbonText.textContent = hindiSlideTexts[idx];
+      }
+    }
+
+    function checkHindiVisibility() {
+      if (!hindiRibbon) return;
+      try {
+        const lang = localStorage.getItem('iroot_lang') || 'en';
+        hindiRibbon.style.display = lang === 'hi' ? 'block' : 'none';
+      } catch(e) {}
+    }
+
+    window.addEventListener('irootLanguageChanged', e => {
+      if (hindiRibbon) {
+        hindiRibbon.style.display = e.detail && e.detail.lang === 'hi' ? 'block' : 'none';
+      }
+    });
+    checkHindiVisibility();
 
     function goTo(idx) {
       if (idx === current) return;
@@ -199,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
       slides[prevIdx].classList.add('leaving');
       setTimeout(() => {
         if (slides[prevIdx]) slides[prevIdx].classList.remove('leaving');
-      }, 1200);
+      }, 1000);
       dots[prevIdx] && dots[prevIdx].classList.remove('active');
 
       current = (idx + slides.length) % slides.length;
@@ -208,6 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
       slides[current].classList.add('active');
       dots[current] && dots[current].classList.add('active');
       if (counter) counter.textContent = pad(current);
+      updateHindiRibbon(current);
     }
 
     function next() { goTo(current + 1); }
