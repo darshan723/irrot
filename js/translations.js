@@ -88,7 +88,7 @@
       "step3_desc": "Tap 'Start' to turn on the pump, switch drip valves between crop zones, or set an automatic timer for scheduled watering.",
 
       "step4_badge": "STEP 04",
-      "step4_title": "Rest in Peace",
+      "step4_title": "Automatic Motor Protection",
       "step4_desc": "The system monitors everything 24x7. If voltage drops or water runs out, it shuts off the motor automatically to prevent damage.",
 
       // Products Section
@@ -370,7 +370,7 @@
       "step3_desc": "घर या बाज़ार कहीं से भी एक टच में मोटर चालू करें, वाल्व बदलें, या टाइमर सेट करें ताकि तय समय पर मोटर अपने आप बंद हो जाए।",
 
       "step4_badge": "चरण 04",
-      "step4_title": "पूरी सुरक्षा, बेफिक्र नींद",
+      "step4_title": "ऑटोमैटिक मोटर सुरक्षा",
       "step4_desc": "सिस्टम 24 घंटे खेत की निगरानी करता है। वोल्टेज बिगड़ने या बोरवेल सूखने पर मोटर अपने आप बंद हो जाती है।",
 
       // Products Section
