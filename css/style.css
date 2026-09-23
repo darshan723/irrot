@@ -2761,23 +2761,23 @@ body {
   bottom: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0.38;
+  opacity: 0.55;
   filter: saturate(1.15) contrast(1.05);
   transition: opacity 0.35s ease, transform 0.4s ease;
   pointer-events: none;
   z-index: 0;
 }
 
-/* Soft light gradient scrim to keep images visible while maximizing text legibility */
+/* Soft light gradient scrim to keep images clearly visible */
 .farmer-step-bg::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.72) 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.38) 0%, rgba(255, 255, 255, 0.55) 100%);
 }
 
 .farmer-step-box:hover .farmer-step-bg {
-  opacity: 0.50;
+  opacity: 0.68;
   transform: scale(1.03);
 }
 
@@ -2787,18 +2787,25 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
+  background: rgba(255, 255, 255, 0.52);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  padding: 14px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
 }
 
 .farmer-step-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .farmer-step-badge {
-  background: rgba(255, 255, 255, 0.95);
-  color: #12432d;
+  background: #ffffff;
+  color: #103d27;
   font-family: var(--font-heading);
   font-weight: 800;
   font-size: 0.78rem;
@@ -2806,7 +2813,7 @@ body {
   padding: 5px 12px;
   border-radius: 6px;
   border: 1px solid rgba(30, 85, 61, 0.25);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
 }
 
 .farmer-step-icon {
@@ -2818,18 +2825,18 @@ body {
   font-family: var(--font-heading);
   font-size: 1.22rem;
   font-weight: 800;
-  color: #0d3b24;
+  color: #072e18;
   margin-bottom: 10px;
-  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95), 0 0 8px rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 2px #ffffff, 0 0 10px rgba(255, 255, 255, 0.9);
 }
 
 .farmer-step-desc {
-  font-size: 0.92rem;
-  color: #12281c;
+  font-size: 0.93rem;
+  color: #0c2014;
   font-weight: 700;
   line-height: 1.55;
   margin: 0;
-  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95), 0 0 6px rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 2px #ffffff, 0 0 8px rgba(255, 255, 255, 0.9);
 }
 
 @media (max-width: 1024px) {
