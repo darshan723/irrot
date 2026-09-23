@@ -2738,8 +2738,8 @@ body {
   background: #ffffff;
   border-radius: 16px;
   padding: 26px 22px;
-  border: 1px solid rgba(106, 151, 24, 0.22);
-  box-shadow: 0 6px 24px rgba(30, 85, 61, 0.04);
+  border: 1.5px solid rgba(106, 151, 24, 0.35);
+  box-shadow: 0 6px 24px rgba(30, 85, 61, 0.08);
   transition: all 0.3s ease;
   overflow: hidden;
   display: flex;
@@ -2749,10 +2749,10 @@ body {
 .farmer-step-box:hover {
   transform: translateY(-4px);
   border-color: #6a9718;
-  box-shadow: 0 14px 34px rgba(106, 151, 24, 0.14);
+  box-shadow: 0 14px 34px rgba(106, 151, 24, 0.2);
 }
 
-/* Subtle background photographic layer */
+/* Clear, vibrant photographic visual layer */
 .farmer-step-bg {
   position: absolute;
   top: 0;
@@ -2761,24 +2761,24 @@ body {
   bottom: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0.18;
+  opacity: 0.38;
   filter: saturate(1.15) contrast(1.05);
-  transition: opacity 0.4s ease, transform 0.45s ease;
+  transition: opacity 0.35s ease, transform 0.4s ease;
   pointer-events: none;
   z-index: 0;
 }
 
-/* Soft light gradient overlay ensuring text remains crisp & highly readable */
+/* Soft light gradient scrim to keep images visible while maximizing text legibility */
 .farmer-step-bg::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(246, 252, 248, 0.82) 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.72) 100%);
 }
 
 .farmer-step-box:hover .farmer-step-bg {
-  opacity: 0.26;
-  transform: scale(1.04);
+  opacity: 0.50;
+  transform: scale(1.03);
 }
 
 .farmer-step-content {
@@ -2797,37 +2797,39 @@ body {
 }
 
 .farmer-step-badge {
-  background: #eef6f0;
-  color: #1e553d;
+  background: rgba(255, 255, 255, 0.95);
+  color: #12432d;
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   letter-spacing: 0.08em;
   padding: 5px 12px;
   border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  border: 1px solid rgba(30, 85, 61, 0.25);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
 .farmer-step-icon {
   font-size: 1.6rem;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
 }
 
 .farmer-step-title {
   font-family: var(--font-heading);
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #1e553d;
+  font-size: 1.22rem;
+  font-weight: 800;
+  color: #0d3b24;
   margin-bottom: 10px;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95), 0 0 8px rgba(255, 255, 255, 0.9);
 }
 
 .farmer-step-desc {
-  font-size: 0.88rem;
-  color: #2d3e35;
-  font-weight: 450;
+  font-size: 0.92rem;
+  color: #12281c;
+  font-weight: 700;
   line-height: 1.55;
   margin: 0;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95), 0 0 6px rgba(255, 255, 255, 0.85);
 }
 
 @media (max-width: 1024px) {
