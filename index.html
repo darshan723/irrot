@@ -506,25 +506,33 @@
             </div>
           </div>
 
-          <!-- Phone Simulator -->
+          <!-- App Screenshots Showcase -->
           <div class="interactive-simulator-card">
             <div class="sim-header">
-              <span class="sim-badge">📱 SEE REAL APP SCREENS</span>
-              <span class="mono-tag text-emerald">Hindi & English</span>
+              <span class="sim-badge">📱 REAL APP SCREENS</span>
+              <span class="mono-tag text-emerald">Hindi &amp; English</span>
             </div>
 
-            <div class="phone-mockup-frame">
-              <div class="phone-notch"></div>
-              <div class="phone-screen-content">
-                <img src="assets/images/app-screen-pump.png" alt="iRoot App Pump Control Screen" class="phone-screen-img" id="phoneMockupDisplay">
+            <div class="app-screen-gallery">
+              <div class="app-screen-wrap active" id="appScreen1">
+                <img src="assets/images/app-screen-pump.png" alt="iRoot App – Pump Control" class="app-screen-img" loading="lazy" />
+              </div>
+              <div class="app-screen-wrap" id="appScreen2">
+                <img src="assets/images/app-screen-moisture.jpg" alt="iRoot App – Soil Moisture &amp; Valve Control" class="app-screen-img" loading="lazy" />
+              </div>
+              <div class="app-screen-wrap" id="appScreen3">
+                <img src="assets/images/app-screen-schedule.png" alt="iRoot App – Water Schedule Timer" class="app-screen-img" loading="lazy" />
+              </div>
+              <div class="app-screen-wrap" id="appScreen4">
+                <img src="assets/images/app-screen-analytics.jpg" alt="iRoot App – History &amp; Timeline" class="app-screen-img" loading="lazy" />
               </div>
             </div>
 
             <div class="phone-tab-selectors" id="phoneTabSelectors">
-              <button class="phone-view-btn active" data-screen="assets/images/app-screen-pump.png">Pump Control</button>
-              <button class="phone-view-btn" data-screen="assets/images/app-screen-moisture.png">Soil Moisture</button>
-              <button class="phone-view-btn" data-screen="assets/images/app-screen-schedule.png">Water Timer</button>
-              <button class="phone-view-btn" data-screen="assets/images/app-screen-analytics.png">Usage History</button>
+              <button class="phone-view-btn active" data-appscreen="1">Pump Control</button>
+              <button class="phone-view-btn" data-appscreen="2">Soil Moisture</button>
+              <button class="phone-view-btn" data-appscreen="3">Water Timer</button>
+              <button class="phone-view-btn" data-appscreen="4">Usage History</button>
             </div>
           </div>
         </div>

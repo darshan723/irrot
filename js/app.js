@@ -278,21 +278,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Phone Mockup Screen Switcher
+  // App Screen Gallery Switcher
   const phoneViewBtns = document.querySelectorAll('.phone-view-btn');
-  const phoneMockupDisplay = document.getElementById('phoneMockupDisplay');
+  const appScreenWraps = document.querySelectorAll('.app-screen-wrap');
 
   phoneViewBtns.forEach(btn => {
     btn.addEventListener('click', () => {
+      const screenNum = btn.getAttribute('data-appscreen');
+      if (!screenNum) return;
+      // Update buttons
       phoneViewBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      const screenSrc = btn.getAttribute('data-screen');
-      if (phoneMockupDisplay && screenSrc) {
-        phoneMockupDisplay.style.opacity = '0.3';
+      // Fade out all screens, show selected
+      appScreenWraps.forEach(wrap => {
+        wrap.style.opacity = '0';
+        wrap.classList.remove('active');
+      });
+      const target = document.getElementById('appScreen' + screenNum);
+      if (target) {
         setTimeout(() => {
-          phoneMockupDisplay.src = screenSrc;
-          phoneMockupDisplay.style.opacity = '1';
-        }, 120);
+          appScreenWraps.forEach(w => w.classList.remove('active'));
+          target.classList.add('active');
+          target.style.opacity = '1';
+        }, 150);
       }
       sfx.playBlip(600, 0.03);
     });
