@@ -3053,3 +3053,98 @@ body {
   display: block;
 }
 
+
+/* ============================================================
+   FLOATING CALL BUTTON
+   ============================================================ */
+.float-call-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #2e7d32, #4caf50);
+  color: #ffffff;
+  text-decoration: none;
+  padding: 14px 20px 14px 16px;
+  border-radius: 50px;
+  box-shadow: 0 6px 28px rgba(46, 125, 50, 0.55), 0 2px 8px rgba(0,0,0,0.18);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  max-width: 56px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.float-call-btn:hover {
+  max-width: 160px;
+  box-shadow: 0 10px 38px rgba(46, 125, 50, 0.7), 0 4px 12px rgba(0,0,0,0.22);
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #1b5e20, #388e3c);
+}
+
+.float-call-pulse {
+  position: absolute;
+  top: 50%;
+  left: 28px;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(76, 175, 80, 0.4);
+  animation: callPulse 2.2s ease-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes callPulse {
+  0%   { transform: translate(-50%, -50%) scale(0.85); opacity: 0.85; }
+  70%  { transform: translate(-50%, -50%) scale(1.55); opacity: 0; }
+  100% { transform: translate(-50%, -50%) scale(0.85); opacity: 0; }
+}
+
+.float-call-icon {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  stroke: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.float-call-btn:hover .float-call-icon {
+  transform: rotate(12deg) scale(1.1);
+}
+
+.float-call-label {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  opacity: 0;
+  max-width: 0;
+  overflow: hidden;
+  transition: opacity 0.25s ease 0.05s, max-width 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.float-call-btn:hover .float-call-label {
+  opacity: 1;
+  max-width: 120px;
+}
+
+@media (max-width: 640px) {
+  .float-call-btn {
+    bottom: 20px;
+    right: 16px;
+    padding: 13px 18px 13px 14px;
+    max-width: 56px;
+  }
+  .float-call-btn:hover {
+    max-width: 150px;
+  }
+}
